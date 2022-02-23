@@ -9,13 +9,14 @@ request({url,json:true},(error,{body})=>{
         }
         else if(body.features.length===0)
         {
-            callback('Unable To Find Location, Try Another Search',undefined  )
+            callback('Unable To Find Location, Try Another Search',undefined )
         }
         else{
-       
+       console.log(body.features[0].center[1])
+       console.log(body.features[0].center[0])
         callback(undefined,{
             latitude:body.features[0].center[1],
-            Longitude:body.features[0].center[0],
+            longitude:body.features[0].center[0],
             location:body.features[0].place_name
         })
         

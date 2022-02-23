@@ -1,7 +1,7 @@
 const request=require('postman-request')
 
 const forecast=(latitude,longitude,callback)=>{
-    const url='http://api.weatherstack.com/current?access_key=ae9d14dd41ec2ee512975f08547c7451&query='+latitude+','+longitude 
+    const url='http://api.weatherstack.com/current?access_key=ae9d14dd41ec2ee512975f08547c7451&query='+latitude+','+longitude
      
     request({ url,json:true},(error,{body})=>{
         if(error)
@@ -9,11 +9,12 @@ const forecast=(latitude,longitude,callback)=>{
             callback('Unable To Connect to weather services',undefined)
         }
         else if(body.error){
-            callback('Unable To Find Location, Try Another Search',undefined  )
+            callback('Unable To Find Location, Try Another Search',undefined )
         }
         else{
+            console.log(latitude+'||'+longitude)
             callback(undefined,{
-                observation_time:body.current.observation_time,
+                observation_time:body.current.observation_time, 
                 temprature:body.current.temperature,
                 precipitation:body.current.precip,
                 weather_descriptions:body.current.weather_descriptions,
