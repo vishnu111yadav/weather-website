@@ -12,7 +12,7 @@ const forecast=(latitude,longitude,callback)=>{
             callback('Unable To Find Location, Try Another Search',undefined )
         }
         else{
-            console.log(latitude+'||'+longitude)
+           
             callback(undefined,{
                 observation_time:body.current.observation_time, 
                 temprature:body.current.temperature,

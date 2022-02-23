@@ -39,7 +39,7 @@ weatherForm.addEventListener('submit',(e)=>{
             message7.textContent='pressure:-'+data.forecast.pressure
             message4.textContent=' Feels like:-'+data.forecast.feelslike
             message8.textContent='humidity:-'+data.forecast.humidity
-            message5.textContent=' observation_time:-'+data.forecast.observation_time
+            message5.textContent='precipitation :-'+data.forecast.precipitation
             message9.textContent='Is_day:-'+data.forecast.is_day
             message10.textContent='This section gives more info'
             

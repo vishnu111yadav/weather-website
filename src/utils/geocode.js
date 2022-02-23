@@ -12,8 +12,7 @@ request({url,json:true},(error,{body})=>{
             callback('Unable To Find Location, Try Another Search',undefined )
         }
         else{
-       console.log(body.features[0].center[1])
-       console.log(body.features[0].center[0])
+       
         callback(undefined,{
             latitude:body.features[0].center[1],
             longitude:body.features[0].center[0],
